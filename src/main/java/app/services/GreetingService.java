@@ -23,7 +23,7 @@ public class GreetingService {
 
   @Loggable
   public List<Greeting> getGreetings(int pageNumber, int pageSize) {
-    PageRequest pageRequest = PageRequest.of(pageNumber, pageSize, new Sort(new Order(Direction.ASC, "id")));
+    PageRequest pageRequest = PageRequest.of(pageNumber, pageSize, Sort.by(new Order(Direction.ASC, "id")));
     Page<Greeting> page = repository.findAll(pageRequest);
     return page.getContent();
   }

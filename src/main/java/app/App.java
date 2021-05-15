@@ -20,7 +20,7 @@ public class App {
   }
 
   @Bean(destroyMethod = "shutdown")
-  public ExecutorService taskScheduler() {
+  public ExecutorService defaultScheduler() {
     return Executors.newScheduledThreadPool(1);
   }
 
